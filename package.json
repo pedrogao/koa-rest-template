@@ -1,0 +1,62 @@
+{
+  "name": "node-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "dev": "tsc -w  -p ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa",
+    "template",
+    "validate",
+    "token",
+    "basic-auth"
+  ],
+  "author": "pedro",
+  "license": "ISC",
+  "dependencies": {
+    "consola": "^1.4.1",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "mysql": "^2.15.0",
+    "reflect-metadata": "^0.1.12",
+    "typeorm": "^0.2.7",
+    "validate.js": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.1.2",
+    "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^5.0.0",
+    "@types/koa-router": "^7.0.30",
+    "eslint": "^5.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jest": "^23.2.0",
+    "ts-jest": "^22.4.6",
+    "tslib": "^1.9.3",
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^7.1.0",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
