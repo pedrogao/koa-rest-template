@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node src/main.ts",
     "dev": "tsc -w  -p ./",
+    "build": "tsc -p ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

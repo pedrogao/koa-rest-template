@@ -5,6 +5,7 @@ import { applyLog } from './libs/log';
 import { IRouterContext } from 'koa-router';
 const app = new Koa();
 
+// 参数解析
 app.use(KoaBodyParser());
 
 // 全局返回格式，错误处理中间件
@@ -25,7 +26,7 @@ app.use(async (ctx, next) => {
 });
 
 app.on('error', (err: Error, ctx: IRouterContext) => {
-  app.log.error(err.name, err.message);
+  app.log.error(err);
   if (err instanceof HttpException) {
     ctx.status = err.code || 400;
     ctx.body = JSON.stringify({
@@ -42,6 +43,7 @@ app.on('error', (err: Error, ctx: IRouterContext) => {
   }
 });
 
+// 添加日志记录
 applyLog(app);
 
 export { app };

@@ -1,20 +1,31 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  BaseEntity,
+  CreateDateColumn,
+  UpdateDateColumn
+} from 'typeorm';
 
 @Entity()
 export class Banner extends BaseEntity {
   @PrimaryGeneratedColumn() id?: number;
 
-  @Column() name?: string;
+  @Column() name!: string;
 
-  @Column() description?: string;
+  @Column() description!: string;
 
-  @Column({
-    name: 'delete_time'
+  @CreateDateColumn({
+    name: 'delete_time',
+    type: 'timestamp',
+    precision: 6
   })
-  deleteTime?: string;
+  deleteTime!: Date;
 
-  @Column({
-    name: 'update_time'
+  @UpdateDateColumn({
+    name: 'update_time',
+    type: 'timestamp',
+    precision: 6
   })
-  updateTime?: string;
+  updateTime!: Date;
 }
