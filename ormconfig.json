@@ -7,17 +7,17 @@
   "database": "crud",
   "synchronize": true,
   "entities": [
-    "src/model/*.ts"
+    "dist/model/*.js"
   ],
   "subscribers": [
-    "src/subscriber/*.ts"
+    "dist/subscriber/*.js"
   ],
   "migrations": [
-    "src/migration/*.ts"
+    "dist/migration/*.js"
   ],
   "cli": {
-    "entitiesDir": "src/model",
-    "migrationsDir": "src/migration",
-    "subscribersDir": "src/subscriber"
+    "entitiesDir": "dist/model",
+    "migrationsDir": "dist/migration",
+    "subscribersDir": "dist/subscriber"
   }
 }

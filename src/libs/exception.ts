@@ -16,15 +16,15 @@ export class HttpException extends Error {
   public msg: string = 'unknown error';
   public errorCode: number = 999;
 
-  constructor(ex: Exception) {
+  constructor(ex?: Exception) {
     super();
-    if (ex.code) {
+    if (ex && ex.code) {
       this.code = ex.code;
     }
-    if (ex.msg) {
+    if (ex && ex.msg) {
       this.msg = ex.msg;
     }
-    if (ex.errorCode) {
+    if (ex && ex.errorCode) {
       this.errorCode = ex.errorCode;
     }
   }
@@ -33,4 +33,22 @@ export class HttpException extends Error {
 export class ParametersException extends HttpException {
   public msg!: string;
   public errorCode = 10001;
+}
+
+export class TokenException extends HttpException {
+  public code: number = 401;
+  public msg: string = 'token verify failed';
+  public errorCode = 20001;
+}
+
+export class UserNotFoundException extends HttpException {
+  public code: number = 404;
+  public msg: string = 'user not found';
+  public errorCode = 30001;
+}
+
+export class AuthException extends HttpException {
+  public code: number = 401;
+  public msg: string = 'must be auth';
+  public errorCode = 20002;
 }

@@ -1,4 +1,4 @@
-import { isPositiveNumber } from './base';
+import { isPositiveNumber, required } from './base';
 import { ParametersException } from '../libs/exception';
 import { IRouterContext } from 'koa-router';
 import { isEmpty } from '../util/common';
@@ -96,5 +96,18 @@ export class UserInfoForm extends BaseForm {
   // 参数校验失败信息
   protected messages: Messages = {
     id: 'id必须为正整数'
+  };
+}
+
+// 校验用户登录，发放token
+export class TokenForm extends BaseForm {
+  protected rules = {
+    name: required,
+    password: required
+  };
+
+  protected messages = {
+    name: '用户名不能为空',
+    password: '密码不能为空'
   };
 }

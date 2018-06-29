@@ -14,6 +14,6 @@ createConnection()
     // mound main router to app
     app.use(router.routes()).use(router.allowedMethods());
 
-    app.listen(3000, () => app.log.start('listening at http://localhost:3000'));
+    app.listen(3000, () => app.log.info('listening at http://localhost:3000'));
   })
   .catch(err => app.log.error(err));
