@@ -49,7 +49,8 @@ export class BaseForm {
         let fieldValue = this.ctx.params && this.ctx.params[field];
         // 如果params中没有，在body中取
         if (!fieldValue) {
-          fieldValue = this.ctx.request.body && this.ctx.request.body[field];
+          fieldValue =
+            this.ctx.request.body && (this.ctx.request.body as any)[field];
         }
         // 一个或多个校验器
         const validators = this.rules[field];

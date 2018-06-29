@@ -3,7 +3,12 @@ import KoaBodyParser from 'koa-bodyparser';
 import { HttpException } from './libs/exception';
 import { applyLog } from './libs/log';
 import { IRouterContext } from 'koa-router';
+import cors from '@koa/cors';
+
 const app = new Koa();
+
+// 跨域
+app.use(cors());
 
 // 参数解析
 app.use(KoaBodyParser());
